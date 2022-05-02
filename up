@@ -19,7 +19,7 @@ T=/tmp/trinit/`basename $PWD`
 if ! checkdeps; then exit 1; fi
 
 mkdir -p $T
-# echo "Taking $T/lock"
+
 while ! mkdir $T/lock 2>/dev/null; do sleep 1; done
 
 if [ -f $T/isup ]
@@ -46,7 +46,7 @@ echo "Upping $ME"
 
 if [ ! -x start ] || timeout $TIMEOUT ./start
 then
-  mkdir -p $T && touch $T/isup
+  touch $T/isup
 else
   echo "Failed to start $ME"
   rmdir $T/lock

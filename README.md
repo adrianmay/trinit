@@ -13,10 +13,11 @@ The philosophy is:
 
 I wrote this cos runit is the only init system simple enough for my feeble brain but it unleashes chaos during shutdown.
 
-
 If a service has multiple dependencies, then one of them is a parent directory as usual, and the others are symlinks. Additionally, the directory for the multiply-dependent service needs a `deps` file listing all the dependencies, including the parent directory. Starting of the multiply-dependent service is happily aborted ("postponed") unless all the services in `deps` are up, i.e., only in response to the starting of the last dependency will it proceed. It's a hassle to have to enter multiple dependencies as both a symlink and a line in `deps` but at least there's a consistency checker to make sure anthing mentioned in `deps` is either the parent directory of has a corresponding symlink.
 
 # Installation
 
-Coming soon
+Still figuring this bit out, but $TRINIT should point to the root of the service tree.
+
+
 
