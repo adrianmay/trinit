@@ -1,7 +1,0 @@
-if [ "$1" = "forget" ]
-then
-  find /tmp/trinit -name isup -delete
-  find /tmp/trinit -name lock -delete
-else
-  find /tmp/trinit -name isup | while read A; do echo $(basename `dirname $A`); done
-fi
