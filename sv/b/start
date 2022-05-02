@@ -1,3 +1,0 @@
-echo "Starting b"
-sleep 1
-echo "Started b"

@@ -1,3 +1,0 @@
-echo "Starting a"
-sleep 1
-true && echo "Started a" || echo "Failed to start a"
