@@ -1,0 +1,3 @@
+echo "Stopping a1"
+sleep 1
+echo "Stopped a1"

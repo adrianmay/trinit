@@ -1,0 +1,2 @@
+isup sv/a/a1 && isup sv/a/a2 || exit 1
+echo "Starting a32"

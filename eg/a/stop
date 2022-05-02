@@ -1,0 +1,4 @@
+
+echo "Stopping a"
+sleep 1
+echo "Stopped a"
