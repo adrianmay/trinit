@@ -1,0 +1,2 @@
+B=`basename $1`
+[ -f /tmp/trinit/$B/isup ]
