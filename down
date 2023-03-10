@@ -1,5 +1,7 @@
 #!/bin/bash
 
+: ${TRINIT:=/etc/trinit}
+
 TIMEOUT=5
 
 if [ $# -ne 0 ]

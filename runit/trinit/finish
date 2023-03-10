@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Runit stopping trinit"
+down .
+sleep 5

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-TIMEOUT=5
+: ${TRINIT:=/etc/trinit}
+echo "TRINIT=$TRINIT"
+
+TIMEOUT=20
 
 if [ $# -ne 0 ]
 then
@@ -16,16 +19,19 @@ fi
 ME=${PWD/$TRINIT\//}
 T=/tmp/trinit/`basename $PWD`
 
-if ! checkdeps; then exit 1; fi
+# if ! checkdeps; then exit 1; fi
 
 mkdir -p $T
 
 while ! mkdir $T/lock 2>/dev/null; do sleep 1; done
 
+echo "Locked $T"
+
 if [ -f $T/isup ]
 then
   echo "$ME is already up"
   rmdir $T/lock
+  echo "Unlocked $T"
   exit 0
 fi
 
@@ -37,6 +43,7 @@ then
     then
       echo "Postponing $ME"
       rmdir $T/lock
+      echo "Unlocked $T"
       exit 2
     fi
   done
@@ -50,6 +57,7 @@ then
 else
   echo "Failed to start $ME"
   rmdir $T/lock
+  echo "Unlocked $T"
   exit 1
 fi
 
@@ -62,4 +70,5 @@ done
 wait
 
 rmdir $T/lock
-
+echo "Unlocked $T"
+  
