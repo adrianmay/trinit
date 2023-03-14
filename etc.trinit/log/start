@@ -1,0 +1,4 @@
+#!/bin/bash
+
+syslog-ng
+sleep 1  

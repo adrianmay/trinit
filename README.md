@@ -23,3 +23,5 @@ It shouldn't attempt to be a process monitor, but there are solutions for that (
 For a runit system, copy this repo's runit/trinit to sv and link to it in the usual way. Note the `sleep infinity` in `run` which converts from runit's "everything must be a process so I can monitor it" philosophy to trinit's "the start script must exit to tell me to proceed to the children".
 
 For other init systems like systemd, do something equivalent.
+
+/tmp should actually be a tmpfs mount so it's sure to be empty upon boot.

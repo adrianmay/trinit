@@ -1,0 +1,5 @@
+# Activate with fcrontab /etc/crontab
+
+0 1 * * * /usr/bin/logrotate
+0 2 * * * /usr/bin/ntpdate pool.ntp.org
+

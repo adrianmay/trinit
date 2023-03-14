@@ -51,7 +51,8 @@ fi
 
 echo "Upping $ME"
 
-if [ ! -x start ] || timeout $TIMEOUT ./start
+# Some programs log to syslog whether I like it or not, so do likewise ...
+if [ ! -x start ] || timeout $TIMEOUT ./start 2>&1 | tee /dev/tty | logger -t $ME 
 then
   touch $T/isup
 else

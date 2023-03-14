@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Starting share"
+while ! [ -f /mnt/share/ThisIsShare ]
+do
+       	if ! mount /mnt/share
+	then
+		echo "Failed attempt to mount share"
+	fi
+	sleep 1
+done
+echo "Mounted share"

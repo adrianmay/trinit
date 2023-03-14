@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Starting net"
+dhcpcd -4 -A --nodelay --waitip=4 eth0 
+while ! ping -c 1 google.com;
+do
+  sleep 1
+done
